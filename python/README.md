@@ -1,9 +1,18 @@
+# Prerequisites
+- Python 3.6 or higher
+- A shell: such as bash, zsh or PowerShell
+- (optional) NodeJS with `nodemon` (`npm install -g nodemon`)
+
 # Setup
 ```
-python3 -m venv venv && source venv/bin/activate && pip install --upgrade pip && pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 # Run tests
 ```
-source venv/bin/activate && pytest
+../tddiscipline/runner.sh "pytest"
+```
+or as a watcher, which will run tests on file changes:
+```
+nodemon -e py --exec "../tddiscipline/runner.sh pytest"
 ```
