@@ -1,0 +1,13 @@
+{
+  "name": "tdd-starter",
+  "version": "1.0.0",
+  "description": "A boilerplate TDD project in javascript",
+  "scripts": {
+    "test": "jest *.test.js"
+  },
+  "author": "Lennart Tange",
+  "private": true,
+  "devDependencies": {
+    "jest": "^29.2.2"
+  }
+}

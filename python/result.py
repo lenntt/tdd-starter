@@ -1,2 +1,2 @@
-def do_something():
-    return 1
+def result(numbers):
+    return 0

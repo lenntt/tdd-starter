@@ -1,8 +1,4 @@
-from result import do_something
-import pytest
+from result import result
 
-def test_result_is_aways_1():
-    assert do_something() == 1
-
-def test_just_fail():
-    pytest.fail("This test is always failing")
+def test_result_of_0_and_0_results_in_0():
+    assert result([0,0]) == 0

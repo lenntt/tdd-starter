@@ -7,7 +7,7 @@ This is a starter project for TDD, allowing us to do katas in our own IDEs. The 
 [link to demo](./screen_demo.mov)
 
 # Get started
-Pick the folder that suits your language and follow the instructions in the README.md file there.
+Pick the folder that suits your language and follow the instructions in the `README.md` file there.
 
 # How to interpret the history
 
