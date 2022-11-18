@@ -12,14 +12,13 @@ Pick the folder that suits your language and follow the instructions in the `REA
 # How to interpret the history
 
 Example output:
-> [🟢]🔴🔴🟢🟢🟡🔴🟢🔴
+> 🟢 - 🔴🔴🟢🟢🟡🔴🟢🔴
 
-the left-most dot is the most recent execution.
+the left-most dot is the most recent execution. The rest are the previous executions. The dots are colored as follows:
 
 - 🟢 = tests passed
 - 🔴 = tests failed
 - 🟡 = error, e.g. syntax error
-
 
 ## What this tells you
 

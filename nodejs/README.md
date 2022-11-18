@@ -8,11 +8,12 @@
 npm install
 ```
 
-# Run tests
+# Run tests via TDDiscipline
+
 ```
-../tddiscipline/runner.sh "npm test"
+node ../tddiscipline/index.js npm test
 ```
 or as a watcher, which will run tests on file changes:
 ```
-nodemon -e js --exec '../tddiscipline/runner.sh "npm test"'
+nodemon -e js --exec "node ../tddiscipline/index.js npm test"
 ```

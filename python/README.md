@@ -1,18 +1,20 @@
 # Prerequisites
 - Python 3.6 or higher
 - A shell: such as bash, zsh or PowerShell
-- (optional) NodeJS with `nodemon` (`npm install -g nodemon`)
+- NodeJS
+    - (optional) `nodemon` (`npm install -g nodemon`)
 
 # Setup
 ```
 pip install -r requirements.txt
 ```
 
-# Run tests
+# Run tests via TDDiscipline
+
 ```
-../tddiscipline/runner.sh "pytest"
+node ../tddiscipline/index.js pytest
 ```
 or as a watcher, which will run tests on file changes:
 ```
-nodemon -e py --exec "../tddiscipline/runner.sh pytest"
+nodemon -e py --exec "node ../tddiscipline/index.js pytest"
 ```

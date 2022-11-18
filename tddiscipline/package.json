@@ -1,0 +1,8 @@
+{
+  "name": "tddiscipline",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Lennart Tange",
+  "license": "MIT",
+  "private": true
+}
