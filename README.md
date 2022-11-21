@@ -9,7 +9,15 @@ This is a starter project for TDD, allowing us to do katas in our own IDEs. The 
 # Get started
 Pick the folder that suits your language and follow the instructions in the `README.md` file there.
 
-# How to interpret the history
+# TDDiscipline
+This is a simple script that wraps the test-runner command, and provides a history of results. Depends on NodeJS being installed. For example, go to one of the language folders, and run:
+```
+node ../tddiscipline/index.js <any command>
+node ../tddiscipline/index.js pytest
+node ../tddiscipline/index.js npm test
+```
+
+## How to interpret the history
 
 Example output:
 > 🟢 - 🔴🔴🟢🟢🟡🔴🟢🔴
