@@ -1,8 +1,8 @@
 # TDD Starter
 
 This is a starter project for TDD, allowing us to do katas in our own IDEs. The value provided here:
-- Simple predefined projects to get started quickly in different languages
-- Present test execution history, similar to how [cyber-dojo.org](https://cyber-dojo.org) does, via our own test-runner-wrap script `tddiscipline`.
+- Minimalistic boilerplate projects for different languages to run a test against code.
+- Present test execution history, comparable to how [cyber-dojo.org](https://cyber-dojo.org) does, via our own test-runner-wrap script `tddiscipline`.
 
 [link to demo](./screen_demo.mov)
 

@@ -1,5 +1,5 @@
 # Prerequisites
-- Python 3.6 or higher
+- Python 3.6 or higher (+ pip)
 - A shell: such as bash, zsh or PowerShell
 - NodeJS
     - (optional) `nodemon` (`npm install -g nodemon`)
