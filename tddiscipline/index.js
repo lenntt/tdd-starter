@@ -7,7 +7,7 @@ const args = process.argv.slice(2);
 
 const RESULT_FILE = '.tddiscipline.result.json';
 
-cmd = spawn(args[0], args.slice(1), { stdio: 'inherit' });
+cmd = spawn(args[0], args.slice(1), { stdio: 'inherit', shell: true});
 cmd.on('exit', (code) => {
     const dot = code === 0 ? '🟢' : (code > 1 ? '🟡' : '🔴');
     let oldResults = [];
