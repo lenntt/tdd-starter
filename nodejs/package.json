@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A boilerplate TDD project in javascript",
   "scripts": {
-    "test": "jest *.test.js"
+    "test": "jest .*.test.js"
   },
   "author": "Lennart Tange",
   "private": true,
