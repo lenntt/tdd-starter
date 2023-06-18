@@ -1,3 +1,3 @@
-module.exports = function(numbers) {
+export default function(number: any) {
     return 0;
 }

@@ -1,4 +1,4 @@
-const result = require('./result');
+import result from "./result";
 
 describe('result', () => {
     it('should return 0 when given an empty array', () => {
