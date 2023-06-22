@@ -3,15 +3,15 @@ import playGame, { Message } from "./playGame";
 const close = jest.fn()
 let next = (data: Message) => {}
 
-jest.mock('../stream/stream', () => (url: string, consume: (data: Message, close: () => void) => void) => {
+const fakeStream = (consume: (data: Message, close: () => void) => void) => {
     next = (data: Message) => consume(data, close);
-})
+}
 
 describe('stream bowling game', () => {
     it('should handle incoming messages and tally the score', () => {
         const nextThrow = jest.fn();
         const endGame = jest.fn();
-        playGame(nextThrow, endGame);
+        playGame(fakeStream, nextThrow, endGame);
 
         next({state: "next", pins: 1});
         expect(nextThrow).toHaveBeenLastCalledWith({throws: [1], score: 1})
@@ -22,7 +22,7 @@ describe('stream bowling game', () => {
     it('should close stream on end state and call end game', () => {
         const nextThrow = jest.fn();
         const endGame = jest.fn();
-        playGame(nextThrow, endGame);
+        playGame(fakeStream, nextThrow, endGame);
 
         next({state: "end", pins: 1});
         expect(nextThrow).toHaveBeenCalled()
@@ -33,7 +33,7 @@ describe('stream bowling game', () => {
     it('should play a whole, realistic game', () => {
         const nextThrow = jest.fn();
         const endGame = jest.fn();
-        playGame(nextThrow, endGame);
+        playGame(fakeStream, nextThrow, endGame);
 
         const gameExceptLastThrow = [10,0,9,7,0,5,1,0,10,1,4,3,0,8,2,4,1,5,5];
         const lastThrow = 3;

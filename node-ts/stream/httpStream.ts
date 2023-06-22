@@ -1,6 +1,6 @@
 import EventSource from "eventsource";
 
-export default function stream<T>(url: string, consume: (data: T, close: () => void) => void) {
+export default <T>(url: string) => (consume: (data: T, close: () => void) => void) => {
     const stream = new EventSource(url, {rejectUnauthorized: false, withCredentials: false});
 
     const closeStream = () => {

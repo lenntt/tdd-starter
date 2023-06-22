@@ -1,7 +1,8 @@
 import playGame from "./game/playGame";
+import httpStream from "./stream/httpStream";
 
 process.stdout.write("Lets score a game!\n");
-playGame(({throws, score}) => {
+playGame(httpStream('https://tdd-bowling-alcckkju2q-ez.a.run.app/'), ({throws, score}) => {
     process.stdout.cursorTo(1);
     process.stdout.write(JSON.stringify(throws) + ": " + score);
 },
