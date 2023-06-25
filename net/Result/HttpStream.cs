@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace Result
 {
-    public class HttpStream<T> : IStream<T>
+    public class HttpStream<T>: IStream<T>
     {
         private readonly ServerEventsClient client;
 
@@ -15,17 +15,18 @@ namespace Result
             };
         }
 
-        public async Task Start()
+        public async Task Start(Action<T> onMessage)
         {
             await client.StartAsync();
-        }
-
-        public async Task<T> ConsumeNextMessage()
-        {
-            var message = await client.WaitForNextMessage();
-            var payload = JsonSerializer.Deserialize<T>(message.Data) ??
-                throw new Exception("paylod is not serializable");
-            return payload;
+            while (true) {
+                if (client.IsStopped) {
+                    break;
+                }
+                var message = await client.WaitForNextMessage();
+                var payload = JsonSerializer.Deserialize<T>(message.Data) ??
+                    throw new Exception("paylod is not serializable");
+                onMessage(payload);
+            }
         }
 
         public async Task Close()

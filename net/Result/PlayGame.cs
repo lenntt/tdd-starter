@@ -13,24 +13,17 @@ namespace Result
         }
 
         public async Task Start() {
-            bool keepPlaying = true;
             List<int> throws = new();
 
-            await Source.Start();
-            while (keepPlaying)
-            {
-                var message = await Source.ConsumeNextMessage();
+            await Source.Start((message) => {
                 throws.Add(message.pins);
-
-                var score = Bowling.Score(throws);
-                OnNewThrow(new GameState(throws, score));
+                OnNewThrow(new GameState(throws, Bowling.Score(throws)));
 
                 if (message.state == "end") {
-                    OnEndGame(score);
-                    await Source.Close();
-                    keepPlaying = false;
+                    OnEndGame(Bowling.Score(throws));
+                    Source.Close();
                 }
-            }
+            });
         }
     }
 
