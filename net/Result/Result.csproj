@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="ServiceStack.Client" Version="6.9.0" />
+  </ItemGroup>
+
 </Project>
