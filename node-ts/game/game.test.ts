@@ -3,8 +3,9 @@ import playGame, { Message } from "./playGame";
 const close = jest.fn()
 let next = (data: Message) => {}
 
-const fakeStream = (consume: (data: Message, close: () => void) => void) => {
-    next = (data: Message) => consume(data, close);
+const fakeStream = (consume: (data: Message) => void): () => void => {
+    next = (data: Message) => consume(data);
+    return close;
 }
 
 describe('stream bowling game', () => {

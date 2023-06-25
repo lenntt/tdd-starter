@@ -5,10 +5,10 @@ describe('stream integration test', () => {
     it('should integrate with actual stream', (done) => {
         const open = httpStream<Message>('https://tdd-bowling-alcckkju2q-ez.a.run.app/')
         
-        open((data, close) => {
+        const close = open((data) => {
             expect(data.state).toBe('next')
-            close()
             done()
+            close()
         })
     })
 
@@ -16,7 +16,7 @@ describe('stream integration test', () => {
 
         const open = httpStream<Message>('https://tdd-bowling-alcckkju2q-ez.a.run.app/')
 
-        open((data, close) => {
+        const close = open((data) => {
             if (data.state === 'end') {
                 close()
                 done()

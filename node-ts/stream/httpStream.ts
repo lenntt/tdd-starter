@@ -1,18 +1,18 @@
 import EventSource from "eventsource";
 
-export default <T>(url: string) => (consume: (data: T, close: () => void) => void) => {
+export default <T>(url: string) => (consume: (data: T) => void): () => void => {
     const stream = new EventSource(url, {rejectUnauthorized: false, withCredentials: false});
-
-    const closeStream = () => {
-        stream.close()
-    }
 
     stream.onmessage = (message: MessageEvent<string>) => {
         const data = JSON.parse(message.data)
-        consume(data, closeStream)
+        consume(data)
     }
 
     stream.onerror = (message: MessageEvent<any>) => {
         console.log('error occured ' + JSON.stringify(message))
+    }
+
+    return () => {
+        stream.close()
     }
 }
