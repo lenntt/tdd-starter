@@ -34,3 +34,8 @@ the left-most dot is the most recent execution. The rest are the previous execut
 - If there are no 🔴, I'm likely adding little new value.
 - If there are only single 🟢, I'm probably are not refactoring. I might need to clean my code.
 - If there is much time between dots, you are probably not doing TDD at all.
+
+## Other resources
+There's a good explanation on cyber-dojo by Emily Bache:
+- Basic practice features: https://youtu.be/lIRF8MgyXho?si=_dy57Oahz2xIYID0&t=916
+- Use in classrooms, with a dashboard: https://www.youtube.com/watch?v=OGGk-iFVOPQ
